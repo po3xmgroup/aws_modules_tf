@@ -79,8 +79,7 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
   name = var.codepolicy_name
   role = aws_iam_role.codepipeline_role.id
 
-  policy = <<EOF
-  {
+  policy =  jsonencode({
     "Statement": [
         {
             "Action": [
@@ -252,7 +251,7 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
         }
     ],
     "Version": "2012-10-17"
-}
-  EOF
+})
+  
 
 }
