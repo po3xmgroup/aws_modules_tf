@@ -79,6 +79,6 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
   name = var.codepolicy_name
   role = aws_iam_role.codepipeline_role.id
 
-  policy = templatefile("../../templates/policy.json", { aws_codepipeline = "tf-test-pipeline" })
+  policy = templatefile("../templates/policy.json", { aws_codepipeline = "tf-test-pipeline" })
 
 }
